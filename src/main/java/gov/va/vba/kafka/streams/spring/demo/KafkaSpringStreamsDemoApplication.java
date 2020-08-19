@@ -1,4 +1,4 @@
-package gov.va.vba.kafka.streams.spring.demo.kafkaspringstreamsdemo;
+package gov.va.vba.kafka.streams.spring.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
