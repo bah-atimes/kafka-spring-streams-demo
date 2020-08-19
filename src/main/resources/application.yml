@@ -9,7 +9,9 @@ spring:
       batch-message-count: 1000
       poll-interval-ms: 60000
       topic-name: sync-claim-topic
-      # auto-offset-reset: earliest
+      auto-offset-reset: earliest
+      wait-interval-ms: 10000
+
     producer:
       topic-name: aggregated-claims-topic
       batch-write-size-bytes: 81920
