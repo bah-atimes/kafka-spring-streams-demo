@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: "@project.name@"
+  config:
+    name: "@project.name@"
+  kafka:
+    consumer:
+      topic-group-id: sync-claim-consumers
+      batch-message-count: 1000
+      poll-interval-ms: 60000
+      topic-name: sync-claim-topic
+      # auto-offset-reset: earliest
+    producer:
+      topic-name: aggregated-claims-topic
+      batch-write-size-bytes: 81920
+    # change this property if you are using your own
+    # Kafka cluster or your Docker IP is different
+    bootstrap-servers: broker:9092
+    messages-per-request: 10
