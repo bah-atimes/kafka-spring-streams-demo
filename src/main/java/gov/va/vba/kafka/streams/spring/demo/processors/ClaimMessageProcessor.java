@@ -76,7 +76,6 @@ public class ClaimMessageProcessor implements Processor<Long, String> {
             keyValueStore.delete(keyValue.key);
             strings.add(keyValue.value);
             if (strings.size() == batchSize || !iterator.hasNext()) {
-                //processorContext.forward(Long.toString(messageCount.incrementAndGet()), getJsonData(strings));
                 processTopicMessagesInBatch(strings);
                 strings.clear();
             }
