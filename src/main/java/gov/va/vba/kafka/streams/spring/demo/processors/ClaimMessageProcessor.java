@@ -56,6 +56,7 @@ public class ClaimMessageProcessor implements Processor<Long, String> {
      */
     private Punctuator getPunctuator() {
         return (timestamp) -> {
+            logger.info("Processing key/value pairs");
             handleKeyValues(getKeyValueData().iterator());
             keyValueStore.flush();
             processorContext.commit();
@@ -85,6 +86,7 @@ public class ClaimMessageProcessor implements Processor<Long, String> {
     private void processTopicMessagesInBatch(List<String> messages) {
         logger.info("got:" + messages.size() + " claims from topic");
         for(String message : messages) {
+            logger.info(message);
             processorContext.forward(Long.toString(aggregatedClaimCount.incrementAndGet()), message);
         }
     }

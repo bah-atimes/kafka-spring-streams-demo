@@ -48,7 +48,6 @@ public class KafkaConfig {
     private static final String SOURCE_NAME = "SOURCE";
     private static final String SINK_NAME = "SINK";
 
-
     @Bean
     public KafkaStreams configureKafka() {
 
